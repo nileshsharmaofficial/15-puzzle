@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+$dark: #020104;
+$correct: #3f3064;
+$background: #f8f6fe;
+$primary: #764ce1;
+$secondary: #e4dcf9;
+$accent: #6636dd;
+
+$light: #f8f6fe;
+$lightgray: #e4dcf9;
+$purple: #764ce1;
+$purple-accent: #6b3fda;
+$purple-accent-darker: #6838e3;
+$dark-purple: #3f3064;
+$gold: #ff9100;
+$gold-accent: #ff8500;
+$dark-gold: #ff7900;
+$dark: #020104;
+
+$grid-size: 4;
+$cell-size: 5rem;
+$cell-gap: 0.5rem;
+$border-radius: 0.5rem;
+$font-size: 2rem;
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Pangolin', cursive;
+}
+
+body {
+  background-color: $purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-size: $font-size;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .board {
+      background-color: $purple-accent;
+      display: grid;
+      grid-template-columns: repeat($grid-size, $cell-size);
+      grid-template-rows: repeat($grid-size, $cell-size);
+      gap: $cell-gap;
+      padding: $cell-gap;
+      position: relative;
+      // border: $secondary solid 2px;
+      border-radius: $border-radius;
+
+      .cell {
+        background-color: $purple-accent-darker;
+        border-radius: $border-radius;
+
+        &:before {
+          content: "";
+          display: block;
+          height: 0;
+          width: 0;
+          padding-bottom: 100%;
+        }
+      }
+
+      .tile {
+        background-color: $dark-purple;
+        color: $light;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: $cell-size;
+        height: $cell-size;
+        border-radius: $border-radius;
+        font-weight: bold;
+
+        &.correct {
+          background-color: $gold;
+          color: $dark-purple;
+        }
+      }
+    }
+  }
+}
+
+.no-btn-styles {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.btn-primary {
+  background-color: $gold;
+  color: $dark-purple;
+  border: none;
+  border-radius: 0.625rem;
+  padding: 0.625rem 0.75rem;
+  font-size: 1.125rem;
+  margin-top: 2rem;
+
+  &:hover {
+    background-color: $gold-accent;
+    cursor: pointer;
+  }
+}
+
+.tile-0 {
+  top: calc(0 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(0 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-1 {
+  top: calc(0 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(1 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-2 {
+  top: calc(0 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(2 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-3 {
+  top: calc(0 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(3 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-4 {
+  top: calc(1 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(0 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-5 {
+  top: calc(1 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(1 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-6 {
+  top: calc(1 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(2 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-7 {
+  top: calc(1 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(3 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-8 {
+  top: calc(2 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(0 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-9 {
+  top: calc(2 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(1 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-10 {
+  top: calc(2 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(2 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-11 {
+  top: calc(2 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(3 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-12 {
+  top: calc(3 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(0 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-13 {
+  top: calc(3 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(1 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-14 {
+  top: calc(3 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(2 * ($cell-size + $cell-gap) + $cell-gap);
+}
+.tile-15 {
+  top: calc(3 * ($cell-size + $cell-gap) + $cell-gap);
+  left: calc(3 * ($cell-size + $cell-gap) + $cell-gap);
+}
